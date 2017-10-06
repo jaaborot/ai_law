@@ -1,0 +1,168 @@
+%%%%%%%%%%%%%% PAPER STRUCTURE %%%%%%%%%%%%%%%%%%
+%                                                                                                                                     %
+%    Simon Peyton Jones paper format                                                                           %
+%    I. ABSTRACT. 4 sentences                                                                                      %
+%    II. INTRODUCTION. 1 page                                                                                    %
+%    III. THE PROBLEM: 1 page                                                                                     %
+%        - The problem I am addressing in the paper.                                                       %
+%        - Why is it an interesting problem to solve?                                                         %
+%        - It is currently an unsolved problem.                                                                   %
+%    IV. MY IDEA. 2 pages                                                                                              %
+%    V. DETAILS OF MY IDEA. 5 pages                                                                         %
+%        - My idea works and here are the technical details.                                            %
+%    VI. RELATED WORK. 1-2 pages                                                                            %
+%        - Here is how my idea compares to other people's works on the same topic.    %
+%    VII. CONCLUSIONS AND FURTHER WORKS. 0.5 pages                                    %
+%                                                                                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\year{2017}\relax
+%File: formatting-instruction.tex
+\documentclass[letterpaper]{article} %DO NOT CHANGE THIS
+\usepackage{aaai17}  %Required
+\usepackage{times}  %Required
+\usepackage{helvet}  %Required
+\usepackage{courier}  %Required
+\usepackage{url}  %Required
+\usepackage{graphicx}  %Required
+\usepackage{todonotes}
+\frenchspacing  %Required
+\setlength{\pdfpagewidth}{8.5in}  %Required
+\setlength{\pdfpageheight}{11in}  %Required
+%PDF Info Is Required:
+  \pdfinfo{
+/Title (Predicting Decisions in the Supreme Court of the Philippines Using a Natural Language Processing and Machine Learning-based Framework)
+/Author (John Kevin Abonita, Jeffrey A. Aborot, Roxanne Avinante, Rother Jay Copino, Michelle P. Neverida, Vanessa O. Osiana, Elmer C. Peramo, Glenn Brian Tan,  Michael Virtucio, Joanna G. Syjuco)
+/Keywords (machine learning, natural language processing, artificial intelligence, law)
+}
+\setcounter{secnumdepth}{0}  
+ \begin{document}
+% The file aaai.sty is the style file for AAAI Press 
+% proceedings, working notes, and technical reports.
+%
+\title{Predicting Decisions in the Supreme Court of the Philippines Using a Natural Language Processing and Machine Learning-based Framework \thanks{This work is fully supported by the Advanced Science and Technology Institute of the Department of Science and Technology, Republic of the Philippines.}}
+\author{John Kevin Abonita,\ Jeffrey A. Aborot,\ Roxanne Avinante, Rother Jay Copino\\
+{\bf Michelle P. Neverida,\ Vanessa O. Osiana,\ Elmer C. Peramo,\ Glenn Brian Tan}\\
+{\bf Michael Virtucio and \ Joanna G. Syjuco}\\
+Research and Development Group\\
+Computer Software Division\\
+Advanced Science and Technology Institute\\
+Department of Science and Technology\\
+email: jep@asti.dost.gov.ph
+}
+\maketitle
+
+% ABSTRACT. 4 sentences
+\begin{abstract}
+AAAI creates proceedings, working notes, and technical reports directly from electronic source furnished by the authors. To ensure that all papers in the publication have a uniform appearance, authors must adhere to the following instructions. 
+\end{abstract}
+
+% INTRODUCTION. 1 page
+\section{Introduction}
+\label{sec:introduction}
+% Notes:
+%     - Describe the problem.
+%     - List your claims in the Introduction section. 
+%     - Format the statement for each claim such that it will be possible to fail in supporting them.
+%     - Use phrases such as 'we give', 'we prove', 'we have built'.
+%     - Forward reference each claim in the Introduction into specific sections in the body. The Introduction should survey the whole paper, and therefore forward reference every important part.
+
+
+% Content:
+%     - Cite backlog problem in the Philippine courts. Be specific as to what courts has backlogs.
+%       The backlogs problem is the more general problem which we would like to contribute solution to while the prediction of outcome of supreme court cases is the more specific problem which we worked on in this paper.
+%       Cite current projects of the Supreme Court for alleviating the backlog problem in courts, e.g. e-courts, e-lib, HustisYeah!.
+%       Mention that currently we do not have access to case documents from lower courts so we make use of and focus on case documents from the Supreme Court, specifically juris prudence documents. Cite the specific data sets used and the size of each data set. (.50 page)
+%     - Cite each contribution in a list format, forward-referencing to each specific section of the body which supports as evidence to each claim. (.50 page)
+
+The Philippine court system is faced with a large volume of backlog cases. The volume of this backlog continue to grow every year despite the successful projects of the Supreme Court aimed towards increasing the efficiency of the judges and their support staff \todo[inline]{cite reference}. The court system lacks enough judges and court staff to accommodate the need for judicial services in the country. The country has only 2,000 courts available to serve the more than 1 million Filipinos nationwide. This averages to 1 court per 50,000 people Ref: http://asiafoundation.org/2016/12/14/conversation-philippines-chief-justice-maria-lourdes-sereno/. Specifically in the lower courts, the average number of cases expected to be handled is around 1 million cases per year. This averages to about 4,000 cases per court per day and 644 cases per judge per year (Ref: http://nap.psa.gov.ph/beyondthenumbers/2013/06132013\_jrga\_courts.asp). Case backlogs in courts also result to overcapacity of detention cells. Suspects in a case are put into detention until they are tried or until they pay bail for conditional release. Suspects with low income on the other hand are unable to pay bail and opt to be detained until their trial instead. Pre-trial detainees compose the 64\% of prison population in the country (Ref: http://www.prisonstudies.org/country/philippines). Case backlogs in the Philippine courts has a far reaching effect in the lives of the citizens and this problem is evident mainly on the front-line courts, closer down to the people \todo[inline]{cite reference}. The first-level (Metropolitan Trial Courts in Cities, Municipal Trial Courts, Municipal Circuit Trial Courts and Shari'a Courts) and second-level (Regional Trial Courts) lower courts suffer the most from case backlogs \todo[inline]{cite reference}. High-impact solutions to the case backlog problem then need to be focused on these lower level courts. Specifically, focus must be put into the rate of delivery of decision on cases on the lower courts. The one clear way to dissipate backlog in courts is to raise the rate of delivery of decisions on cases higher than the rate of incoming new cases. This task is difficult for a judge who in average needs to dispense decision on two cases per day in a year.
+
+The case backlog problem in the lower courts and the focus on increasing the rate of disposition of cases can be approached from various angles. Some of the reforms and projects of the Judiciary which contributed in the dissipation of the case backlog problem in the courts are the \textit{Enhanced Justice on Wheels}, \textit{Small Claims Courts}, \textit{Zero Backlog Project}, \textit{Hustisyeah!} \todo[inline]{cite Judiciary annual report for 2013, 2015 and 2016}. Varying significant decrease in the case backlog of identified highly congested lower level courts resulted from these reforms \todo[inline]{cite Judiciary annual report for 2013}. In this paper we look into the problem specifically from the technological perspective. \todo[inline]{discuss briefly about NLP and ML specifically in application to legal documents} Nowadays, various Natural Language Processing (NLP) technologies coupled with Machine Learning (ML) technologies are already being used in different areas of the legal system. These application areas include \textit{legal research}, \textit{electronic discovery of evidences}, \textit{contract analysis}, \textit{legal education and legal prediction} \todo[inline]{cite references for each area}. Specifically in the area of legal prediction, mathematical models are developed and used to predict outcomes of legal cases in courts \todo[inline]{cite references for legal prediction}. The long-term aim of researchers in this area is not to replace human judges but to augment them in their decision-making process by providing initial classifications of cases based on \textit{juris prudence}. 
+
+Specifically, we make the following contributions in this study
+\begin{enumerate}
+\item We provide pre-processed, cleansed and classified data sets of Philippine Supreme Court \textit{juris prudence} cases from year 1987 to 2017 ready for use of the public for research purposes (see Data Acquisition and Cleansing).
+\item We provide n-gram data sets resulting from natural language processing of the pre-processed Philippine Supreme Court \textit{juris prudence} cases from year 1987 to 2017 ready for use of the public for research purposes (see Feature Extraction).
+\item We provide various machine learning models for classifying future Philippine Supreme Court cases (see Model Development).
+\end{enumerate}
+
+
+% THE PROBLEM: 1 page                                                                                     
+%        - The problem I am addressing in the paper.                                                       
+%        - Why is it an interesting problem to solve?                                                         
+%        - It is currently an unsolved problem.
+\section{The Challenge}
+
+% Notes:
+%     - Discuss with good depth the problem you are trying to solve.
+
+% Content:
+%     - Discuss with good depth the problem of classifying a specific subset of Supreme Court cases into either Affirm or Reverse.
+%     - Discuss in detail the composition of the chosen data set and the rationale as to why that particular data set was chosen.
+
+
+% MY IDEA + TECHNICAL DETAILS. 7 pages
+\section{Our Solution and Its Technical Details}
+\label{sec:solution}
+
+% Notes:
+%     - Explain the intuition first instead of the general idea. Imagine as if you are explaining to someone using a whiteboard.
+%       Once your reader has intuition about your problem and your idea, she can follow the details.
+%       Even if she forgets the details of your idea, she will most likely remember the intuition about your idea.
+%     - Introduce the problem and your idea using examples. Afterwards, present the general case.
+%     - Choose the most direct route to presenting your idea to your reader.
+
+% Our Solution. 2 pages
+
+% Theoretical Framework. .5 page
+\subsection{Theoretical Framework}
+\label{sec:framework}
+
+% Methodology. .5 page
+\subsection{Methodology}
+\label{sec:methodology}
+
+% Technical Details. 5 pages
+\subsection{Results}\label{results}
+\subsubsection{Data Acquisition and Cleansing}
+\label{sec:data-cleansing}
+
+\subsubsection{Feature Extraction}
+\label{sec:feature-extraction}
+
+\subsubsection{Model Development}
+\label{sec:model-development}
+
+Section~\ref{sec:introduction}
+
+
+% DISCUSSION OF RESULTS
+\section{Discussion}
+
+% RELATED WORK. 1-2 pages                                                                           
+%        - Here is how my idea compares to other people's works on the same topic.
+\section{Related Works}
+
+% Notes:
+%     - Postpone the Related Work to a later section, with the tone "Now let us compare our contributions to current related works...".
+%     - Do not downplay other people's work to make your contributions look good.
+%     - Warmly acknowledge people who have helped you in developing your idea.
+%     - Be generous to the competition. ?In his inspiring paper [Foo98] Foogle shows? We develop his foundation in the following ways??
+%     - Acknowledge weakness in your approach.
+
+% Content:
+%     - Cite the work of Aletras et al., 2016
+
+% CONCLUSIONS AND FURTHER WORKS. 0.5 pages
+\section{Conclusion}
+
+% ACKNOWLEDGEMENT
+\section{Acknowledgement}
+% DOST-ASTI COARE Team
+
+% REFERENCES
+\section{References}
+\bibliographystyle{aaai}
+\bibliography{scai}
+
+\end{document}
